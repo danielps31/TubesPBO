@@ -5,6 +5,10 @@
  */
 package View;
 
+import java.awt.event.MouseAdapter;
+import javax.swing.JLabel;
+import Controller.Controller_login;
+
 /**
  *
  * @author ACER
@@ -30,12 +34,12 @@ public class view_homepage extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         Masuk = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        login = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         Masuk1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        daftar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -53,9 +57,14 @@ public class view_homepage extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("MASUK");
+        login.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("MASUK");
+        login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                loginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout MasukLayout = new javax.swing.GroupLayout(Masuk);
         Masuk.setLayout(MasukLayout);
@@ -63,14 +72,14 @@ public class view_homepage extends javax.swing.JFrame {
             MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MasukLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(login)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         MasukLayout.setVerticalGroup(
             MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(MasukLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(login)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -109,9 +118,14 @@ public class view_homepage extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("DAFTAR");
+        daftar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        daftar.setForeground(new java.awt.Color(255, 255, 255));
+        daftar.setText("DAFTAR");
+        daftar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                daftarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Masuk1Layout = new javax.swing.GroupLayout(Masuk1);
         Masuk1.setLayout(Masuk1Layout);
@@ -119,14 +133,14 @@ public class view_homepage extends javax.swing.JFrame {
             Masuk1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Masuk1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
+                .addComponent(daftar)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         Masuk1Layout.setVerticalGroup(
             Masuk1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Masuk1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel4)
+                .addComponent(daftar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -229,21 +243,47 @@ public class view_homepage extends javax.swing.JFrame {
 
     private void MasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MasukMouseClicked
         // TODO add your handling code here:
-       Login a = new Login();
-        a.setVisible(true);
-        
-        this.dispose();
+       new Controller_login();
+       this.dispose();
+
     }//GEN-LAST:event_MasukMouseClicked
 
     private void Masuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Masuk1MouseClicked
         // TODO add your handling code here:
-       Registrasi a = new Registrasi();
+        Registrasi a = new Registrasi();
         a.setVisible(true);
-        
+
         this.dispose();
     }//GEN-LAST:event_Masuk1MouseClicked
 
-    
+    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
+        // TODO add your handling code here:
+//        Login a = new Login();
+//        a.setVisible(true);
+//
+//        this.dispose();
+    }//GEN-LAST:event_loginMouseClicked
+
+    private void daftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseClicked
+        // TODO add your handling code here:
+        Registrasi a = new Registrasi();
+        a.setVisible(true);
+
+        this.dispose();
+    }//GEN-LAST:event_daftarMouseClicked
+
+    public void addMouseAdapter(MouseAdapter x) {
+        login.addMouseListener(x);
+    }
+
+    public JLabel getLogin() {
+        return login;
+    }
+
+    public void setLogin(JLabel login) {
+        this.login = login;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -283,10 +323,9 @@ public class view_homepage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Masuk;
     private javax.swing.JPanel Masuk1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel daftar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -295,5 +334,6 @@ public class view_homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel login;
     // End of variables declaration//GEN-END:variables
 }

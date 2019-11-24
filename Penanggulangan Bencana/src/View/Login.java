@@ -280,7 +280,7 @@ public class Login extends javax.swing.JFrame {
 
     private void btnMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasukActionPerformed
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_btnMasukActionPerformed
 
     private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
@@ -303,7 +303,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfUsernameActionPerformed
 
-    public JButton getButtonmasuk() {
+    public JButton getbtnMasuk() {
         return btnMasuk;
     }
 

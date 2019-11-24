@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author fikri
  */
-public class Controller_login extends MouseAdapter implements ActionListener {
+public class Controller_login implements ActionListener {
     
     private Login view;
     private Koneksi kn;
@@ -32,7 +32,7 @@ public class Controller_login extends MouseAdapter implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (source.equals(view.getButtonmasuk())){
+        if (source.equals(view.getbtnMasuk())){
             btnLoginActionPerformed();
         }
     }
@@ -49,6 +49,7 @@ public class Controller_login extends MouseAdapter implements ActionListener {
                 System.out.println(idUser);
                 view.showMessage("Selamat Datang ", "Login Berhasil",1);
                 HomeAfterLogin home = new HomeAfterLogin();
+                home.setUsername(username);
                 view.setVisible(false);
                 home.setVisible(true);
             } else {

@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author ACER
@@ -29,7 +31,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        Username = new javax.swing.JLabel();
         Home = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -49,10 +51,9 @@ public class HomeAfterLogin extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(7, 87, 91));
 
-        jLabel2.setBackground(new java.awt.Color(7, 87, 91));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("@USERNAME  |");
+        Username.setBackground(new java.awt.Color(7, 87, 91));
+        Username.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Username.setForeground(new java.awt.Color(255, 255, 255));
 
         Home.setBackground(new java.awt.Color(7, 87, 91));
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -147,7 +148,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -160,7 +161,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Laporkan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -259,7 +260,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         UserLapor a = new UserLapor();
         a.setVisible(true);
-
+        
         this.dispose();
     }//GEN-LAST:event_LaporkanMouseClicked
 
@@ -272,6 +273,13 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BantuMouseClicked
 
+
+
+    public void setUsername(String Username) {
+        this.Username.setText(Username);
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -312,31 +320,15 @@ public class HomeAfterLogin extends javax.swing.JFrame {
     private javax.swing.JPanel Bantu;
     private javax.swing.JPanel Home;
     private javax.swing.JPanel Laporkan;
-    private javax.swing.JPanel Masuk2;
-    private javax.swing.JPanel Masuk3;
-    private javax.swing.JPanel Masuk4;
-    private javax.swing.JPanel Masuk5;
+    private javax.swing.JLabel Username;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labl;
