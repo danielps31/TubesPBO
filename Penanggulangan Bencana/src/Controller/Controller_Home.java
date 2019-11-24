@@ -9,24 +9,27 @@ import View.view_homepage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
  * @author Shamgar
  */
-public class Controller_Home extends MouseAdapter {
+public class Controller_Home implements ActionListener{
 
     private view_homepage home;
 
     public Controller_Home() {
         home = new view_homepage();
-        home.addMouseAdapter(this);
+        home.addActionListener(this);
+        System.out.println("MASUK CHOME");
         home.setVisible(true);
     }
 
-    public void mousePressed(ActionEvent e) {
+    @Override
+    public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (source.equals(home.getLogin())) {
+        if (source.equals(home.getLogin())){
             new Controller_login();
             home.setVisible(false);
         }

@@ -8,6 +8,9 @@ package View;
 import java.awt.event.MouseAdapter;
 import javax.swing.JLabel;
 import Controller.Controller_login;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -33,14 +36,13 @@ public class view_homepage extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        Masuk = new javax.swing.JPanel();
-        login = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         Masuk1 = new javax.swing.JPanel();
         daftar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        login = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -49,39 +51,6 @@ public class view_homepage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(7, 87, 91));
-
-        Masuk.setBackground(new java.awt.Color(7, 87, 91));
-        Masuk.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MasukMouseClicked(evt);
-            }
-        });
-
-        login.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("MASUK");
-        login.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout MasukLayout = new javax.swing.GroupLayout(Masuk);
-        Masuk.setLayout(MasukLayout);
-        MasukLayout.setHorizontalGroup(
-            MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MasukLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(login)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        MasukLayout.setVerticalGroup(
-            MasukLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MasukLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(login)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jPanel4.setBackground(new java.awt.Color(7, 87, 91));
 
@@ -146,6 +115,16 @@ public class view_homepage extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LOGOFIX.png"))); // NOI18N
 
+        login.setBackground(new java.awt.Color(0, 204, 204));
+        login.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("LOGIN");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -154,10 +133,10 @@ public class view_homepage extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Masuk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Masuk1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 226, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -166,9 +145,9 @@ public class view_homepage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Masuk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Masuk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -217,7 +196,10 @@ public class view_homepage extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,13 +223,6 @@ public class view_homepage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MasukMouseClicked
-        // TODO add your handling code here:
-       new Controller_login();
-       this.dispose();
-
-    }//GEN-LAST:event_MasukMouseClicked
-
     private void Masuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Masuk1MouseClicked
         // TODO add your handling code here:
         Registrasi a = new Registrasi();
@@ -255,14 +230,6 @@ public class view_homepage extends javax.swing.JFrame {
 
         this.dispose();
     }//GEN-LAST:event_Masuk1MouseClicked
-
-    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        // TODO add your handling code here:
-//        Login a = new Login();
-//        a.setVisible(true);
-//
-//        this.dispose();
-    }//GEN-LAST:event_loginMouseClicked
 
     private void daftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseClicked
         // TODO add your handling code here:
@@ -272,17 +239,11 @@ public class view_homepage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_daftarMouseClicked
 
-    public void addMouseAdapter(MouseAdapter x) {
-        login.addMouseListener(x);
-    }
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginActionPerformed
 
-    public JLabel getLogin() {
-        return login;
-    }
 
-    public void setLogin(JLabel login) {
-        this.login = login;
-    }
 
     /**
      * @param args the command line arguments
@@ -320,8 +281,16 @@ public class view_homepage extends javax.swing.JFrame {
         });
     }
 
+    public JButton getLogin() {
+        return login;
+    }
+    
+   
+        public void addActionListener(ActionListener x){
+        login.addActionListener(x);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Masuk;
     private javax.swing.JPanel Masuk1;
     private javax.swing.JLabel daftar;
     private javax.swing.JLabel jLabel2;
@@ -334,6 +303,6 @@ public class view_homepage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel login;
+    private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
 }
