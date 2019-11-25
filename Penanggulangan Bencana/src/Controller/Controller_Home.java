@@ -18,6 +18,7 @@ import java.awt.event.MouseEvent;
 public class Controller_Home implements ActionListener{
 
     private view_homepage home;
+   
 
     public Controller_Home() {
         home = new view_homepage();
@@ -30,7 +31,10 @@ public class Controller_Home implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source.equals(home.getLogin())){
-            new Controller_login();
+            new Controller_loginUser();
+            home.setVisible(false);
+        } else if (source.equals(home.getbtnDaftar())){
+            new Controller_Registrasi();
             home.setVisible(false);
         }
     }

@@ -32,7 +32,7 @@ public class UserLapor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
         Home = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Masuk1 = new javax.swing.JPanel();
@@ -69,10 +69,10 @@ public class UserLapor extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(7, 87, 91));
 
-        jLabel2.setBackground(new java.awt.Color(7, 87, 91));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("@USERNAME  |");
+        username.setBackground(new java.awt.Color(7, 87, 91));
+        username.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setText("@USERNAME  |");
 
         Home.setBackground(new java.awt.Color(7, 87, 91));
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,7 +168,7 @@ public class UserLapor extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -181,7 +181,7 @@ public class UserLapor extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Masuk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -409,6 +409,7 @@ public class UserLapor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_KeteranganFocusLost
 
+
     /**
      * @param args the command line arguments
      */
@@ -455,7 +456,6 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JPanel Masuk1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
@@ -468,5 +468,6 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

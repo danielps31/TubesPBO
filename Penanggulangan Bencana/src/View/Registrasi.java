@@ -5,6 +5,10 @@
  */
 package View;
 
+import Controller.Controller_Registrasi;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -50,7 +54,7 @@ public class Registrasi extends javax.swing.JFrame {
         tfNo_telp = new javax.swing.JTextField();
         tfUsername = new javax.swing.JTextField();
         tfPassword = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        btnDaftar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -212,12 +216,12 @@ public class Registrasi extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(1, 1, 1));
-        jButton1.setText("DAFTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnDaftar.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnDaftar.setForeground(new java.awt.Color(1, 1, 1));
+        btnDaftar.setText("DAFTAR");
+        btnDaftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnDaftarActionPerformed(evt);
             }
         });
 
@@ -252,7 +256,7 @@ public class Registrasi extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(165, 165, 165))
         );
         jPanel3Layout.setVerticalGroup(
@@ -284,7 +288,7 @@ public class Registrasi extends javax.swing.JFrame {
                     .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addGap(62, 62, 62)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
 
@@ -310,7 +314,7 @@ public class Registrasi extends javax.swing.JFrame {
 
     private void MasukMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MasukMouseClicked
         // TODO add your handling code here:         
-        Login a = new Login();
+        LoginUser a = new LoginUser();
         a.setVisible(true);
         
         this.dispose();
@@ -336,9 +340,9 @@ public class Registrasi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfUsernameActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnDaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDaftarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnDaftarActionPerformed
 
     private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
         // TODO add your handling code here:
@@ -352,6 +356,11 @@ public class Registrasi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPasswordActionPerformed
 
+    
+    public JButton getbtnDaftar() {
+        return btnDaftar;
+    }
+    
     public String getTfEmail() {
         return tfEmail.getText();
     }
@@ -392,6 +401,14 @@ public class Registrasi extends javax.swing.JFrame {
         this.tfUsername.setText(tfUsername);
     }
     
+    public void addActionListener(ActionListener x){
+        btnDaftar.addActionListener(x);
+    }
+        
+        
+    public void showMessage(String message, String title, int type){
+        JOptionPane.showMessageDialog(null, message, title, type);
+    }
     
     
     /**
@@ -434,7 +451,7 @@ public class Registrasi extends javax.swing.JFrame {
     private javax.swing.JPanel Logo;
     private javax.swing.JLabel Logo1;
     private javax.swing.JPanel Masuk;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDaftar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
@@ -453,4 +470,5 @@ public class Registrasi extends javax.swing.JFrame {
     private javax.swing.JPasswordField tfPassword;
     private javax.swing.JTextField tfUsername;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -7,7 +7,8 @@ package View;
 
 import java.awt.event.MouseAdapter;
 import javax.swing.JLabel;
-import Controller.Controller_login;
+import Controller.Controller_loginUser;
+import Controller.Controller_Registrasi;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -40,7 +41,7 @@ public class view_homepage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         Masuk1 = new javax.swing.JPanel();
-        daftar = new javax.swing.JLabel();
+        Daftar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
@@ -75,7 +76,7 @@ public class view_homepage extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -87,12 +88,13 @@ public class view_homepage extends javax.swing.JFrame {
             }
         });
 
-        daftar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        daftar.setForeground(new java.awt.Color(255, 255, 255));
-        daftar.setText("DAFTAR");
-        daftar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                daftarMouseClicked(evt);
+        Daftar.setBackground(new java.awt.Color(0, 204, 204));
+        Daftar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Daftar.setForeground(new java.awt.Color(255, 255, 255));
+        Daftar.setText("DAFTAR");
+        Daftar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DaftarActionPerformed(evt);
             }
         });
 
@@ -102,15 +104,14 @@ public class view_homepage extends javax.swing.JFrame {
             Masuk1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Masuk1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(daftar)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(Daftar, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Masuk1Layout.setVerticalGroup(
             Masuk1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Masuk1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(daftar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Daftar, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LOGOFIX.png"))); // NOI18N
@@ -136,7 +137,7 @@ public class view_homepage extends javax.swing.JFrame {
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Masuk1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -196,10 +197,7 @@ public class view_homepage extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,25 +223,30 @@ public class view_homepage extends javax.swing.JFrame {
 
     private void Masuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Masuk1MouseClicked
         // TODO add your handling code here:
-        Registrasi a = new Registrasi();
-        a.setVisible(true);
 
-        this.dispose();
     }//GEN-LAST:event_Masuk1MouseClicked
-
-    private void daftarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_daftarMouseClicked
-        // TODO add your handling code here:
-        Registrasi a = new Registrasi();
-        a.setVisible(true);
-
-        this.dispose();
-    }//GEN-LAST:event_daftarMouseClicked
 
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_loginActionPerformed
 
+    private void DaftarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DaftarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DaftarActionPerformed
 
+
+    public JButton getLogin() {
+        return login;
+    }
+    
+    public JButton getbtnDaftar() {
+        return Daftar;
+    }
+   
+        public void addActionListener(ActionListener x){
+        login.addActionListener(x);
+        Daftar.addActionListener(x);
+    }
 
     /**
      * @param args the command line arguments
@@ -281,18 +284,11 @@ public class view_homepage extends javax.swing.JFrame {
         });
     }
 
-    public JButton getLogin() {
-        return login;
-    }
-    
-   
-        public void addActionListener(ActionListener x){
-        login.addActionListener(x);
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Daftar;
     private javax.swing.JPanel Masuk1;
-    private javax.swing.JLabel daftar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -305,4 +301,6 @@ public class view_homepage extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton login;
     // End of variables declaration//GEN-END:variables
+
+
 }

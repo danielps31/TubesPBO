@@ -5,6 +5,7 @@
  */
 package View;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -35,10 +36,9 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         Home = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        Laporkan = new javax.swing.JPanel();
-        labl = new javax.swing.JLabel();
         Bantu = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
+        Laporkan = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -86,34 +86,6 @@ public class HomeAfterLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        Laporkan.setBackground(new java.awt.Color(7, 87, 91));
-        Laporkan.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LaporkanMouseClicked(evt);
-            }
-        });
-
-        labl.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        labl.setForeground(new java.awt.Color(255, 255, 255));
-        labl.setText("LAPORKAN");
-
-        javax.swing.GroupLayout LaporkanLayout = new javax.swing.GroupLayout(Laporkan);
-        Laporkan.setLayout(LaporkanLayout);
-        LaporkanLayout.setHorizontalGroup(
-            LaporkanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LaporkanLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        LaporkanLayout.setVerticalGroup(
-            LaporkanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LaporkanLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         Bantu.setBackground(new java.awt.Color(7, 87, 91));
         Bantu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -142,6 +114,13 @@ public class HomeAfterLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        Laporkan.setText("LAPORKAN");
+        Laporkan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LaporkanActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -151,21 +130,22 @@ public class HomeAfterLogin extends javax.swing.JFrame {
                 .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Laporkan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
+                .addComponent(Laporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addComponent(Bantu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Bantu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Laporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Laporkan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Bantu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LOGOFIX.png"))); // NOI18N
@@ -256,14 +236,6 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
 
-    private void LaporkanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LaporkanMouseClicked
-        // TODO add your handling code here:
-        UserLapor a = new UserLapor();
-        a.setVisible(true);
-        
-        this.dispose();
-    }//GEN-LAST:event_LaporkanMouseClicked
-
     private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
         // TODO add your handling code here:
         Bantuan a = new Bantuan();
@@ -273,12 +245,16 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BantuMouseClicked
 
+    private void LaporkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LaporkanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LaporkanActionPerformed
+
 
 
     public void setUsername(String Username) {
         this.Username.setText(Username);
     }
-    
+
     
     /**
      * @param args the command line arguments
@@ -319,7 +295,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Bantu;
     private javax.swing.JPanel Home;
-    private javax.swing.JPanel Laporkan;
+    private javax.swing.JButton Laporkan;
     private javax.swing.JLabel Username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel15;
@@ -331,6 +307,5 @@ public class HomeAfterLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labl;
     // End of variables declaration//GEN-END:variables
 }

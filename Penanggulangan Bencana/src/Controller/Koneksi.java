@@ -86,6 +86,33 @@ public class Koneksi {
                 id = usr.getId_user();
             }
         } return id;
+    } 
+    
+        public boolean cekDuplikasiUsername(String q){
+        boolean cek = false;
+        for (User u : user) {
+            if (u.getUsername().equals(q) ){
+                cek = true;
+                break;
+            }
+        }
+        return cek;
     }
-  
+        
+        public void addUser(User m) {
+        connect();
+        String query = "INSERT INTO User VALUES (";
+        query += "'" + m.getId_user() + "',";
+        query += "'" + m.getNo_telp() + "',";
+        query += "'" + m.getUsername() + "',";
+        query += "'" + m.getNama() + "'";
+        query += "'" + m.getEmail() + "'";
+        query += "'" + m.getPassword() + "'";
+        query += ")";
+        if (manipulate(query)){ User.add(m);
+        }disconnect();
+    }
+     
 }
+
+   

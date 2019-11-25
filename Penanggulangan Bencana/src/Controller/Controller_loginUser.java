@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+
 import View.*;
 import Model.*;
 import java.awt.event.*;
@@ -14,17 +15,17 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author fikri
  */
-public class Controller_login implements ActionListener {
+public class Controller_loginUser implements ActionListener {
     
-    private Login view;
+    private LoginUser view;
     private Koneksi kn;
     private String idUser;
     private String username;
     private String password;
     
-    public Controller_login(){
+    public Controller_loginUser(){
         kn = new Koneksi();
-        view = new Login();
+        view = new LoginUser();
         view.addActionListener(this);
         view.setVisible(true);
     }
@@ -34,6 +35,10 @@ public class Controller_login implements ActionListener {
         Object source = e.getSource();
         if (source.equals(view.getbtnMasuk())){
             btnLoginActionPerformed();
+        } else if(source.equals(view.getbtnLoginAdmin())){
+            btnLoginAdminActionPerformed();
+        } else if(source.equals(view.getbtnDaftar())){
+            btnDaftarActionPerformed();
         }
     }
     
@@ -57,5 +62,18 @@ public class Controller_login implements ActionListener {
             }
         }
     }   
-  
-}
+
+    private void btnLoginAdminActionPerformed() {
+        new Controller_Registrasi();
+        view.setVisible(false);
+
+    }
+
+    private void btnDaftarActionPerformed() {
+        new Controller_Registrasi();
+        view.setVisible(false);
+
+    }
+    }
+    
+
