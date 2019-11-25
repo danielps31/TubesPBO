@@ -19,9 +19,12 @@ public class Controller_Registrasi implements ActionListener {
     
     private Registrasi view;
     private Koneksi kn;
-    private int id_user;
+    private String id_user;
     private String username;
     private String password;
+    private String no_telp;
+    private String email;
+    private String nama;
     
     public Controller_Registrasi(){
         kn = new Koneksi();
@@ -46,13 +49,14 @@ public class Controller_Registrasi implements ActionListener {
         String no_telp  = view.getTfNo_telp();
         String username = view.getTfUsername();
         String password = view.getTfPassword();
+        String id_user = view.getTfId_user();
         if(nama.isEmpty() || username.isEmpty() || password.isEmpty() || email.isEmpty() || no_telp.isEmpty()){
             view.showMessage("Ada Bagian kosong!!!", "Error", 0);
         }else{
             if(kn.cekDuplikasiUsername(username)){
                 view.showMessage("Username Sudah Ada", "Error", 1);
                 } else {
-                    kn.addUser(new User(nama,id_user,email,no_telp,username,password));
+                    kn.addUser(new User(username,no_telp,nama,email,password,id_user));
                     view.showMessage("data berhasil ditambah", "Succes", 2);
                     HomeAfterLogin home = new HomeAfterLogin();
                      home.setUsername(username);

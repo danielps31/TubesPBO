@@ -15,9 +15,9 @@ public class User extends PERSON{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     private String id_user;
-    private int no_telp;
+    private String no_telp;
 
-    public User(String id_user, int no_telp, String username, String Nama, String email, String password) {
+    public User(String id_user, String no_telp, String username, String Nama, String email, String password) {
         super(username, Nama, email, password);
         this.id_user = id_user;
         this.no_telp = no_telp;
@@ -31,11 +31,11 @@ public class User extends PERSON{
         this.id_user = id_user;
     }
 
-    public int getNo_telp() {
+    public String getNo_telp() {
         return no_telp;
     }
 
-    public void setNo_telp(int no_telp) {
+    public void setNo_telp(String no_telp) {
         this.no_telp = no_telp;
     }
     
