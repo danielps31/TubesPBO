@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shamgar
+ * @author fikri
  */
 public class Controller_loginUser implements ActionListener {
     

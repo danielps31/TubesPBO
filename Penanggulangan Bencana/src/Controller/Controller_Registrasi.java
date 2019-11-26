@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author shamgar
+ * @author fikri
  */
 public class Controller_Registrasi implements ActionListener {
 
@@ -53,21 +53,13 @@ public class Controller_Registrasi implements ActionListener {
             } else {
                 if (kn.addUser(new User(null, no_telp,username,nama,email,password))) {
                     view.showMessage("data berhasil ditambah", "Succes", 2);
-<<<<<<< HEAD
-                    HomeAfterLogin home = new HomeAfterLogin();
-                     home.setUsername(username);
-                     view.setVisible(false);
-                     home.setVisible(true);
-                    }
-=======
                  new Controller_HomeAfterLogin(username);
                 view.setVisible(false);
                 }else{
                     view.showMessage("data gagal ditambah", "Error", 1);
                 }
 
->>>>>>> 12d3d873a60154d57b4562fcef2a89e9df808f2f
             }
         }
     }
-            
+}

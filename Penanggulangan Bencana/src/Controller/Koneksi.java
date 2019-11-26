@@ -12,12 +12,7 @@ import java.util.logging.*;
 
 /**
  *
-<<<<<<< HEAD
- * @author shamgar
- * 
-=======
  * @author Daniel
->>>>>>> 12d3d873a60154d57b4562fcef2a89e9df808f2f
  */
 public class Koneksi {
 
