@@ -70,4 +70,4 @@ public class Controller_Registrasi implements ActionListener {
             }
         }
     }
-}
+            
