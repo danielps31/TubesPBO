@@ -17,15 +17,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Controller_loginAdmin implements ActionListener {
     
-    private LoginUser view;
+    private LoginAdmin view;
     private Koneksi kn;
-    private String idUser;
+    private String idAdmin;
     private String username;
     private String password;
     
     public Controller_loginAdmin(){
         kn = new Koneksi();
-        view = new LoginUser();
+        view = new LoginAdmin();
         view.addActionListener(this);
         view.setVisible(true);
     }
@@ -34,22 +34,22 @@ public class Controller_loginAdmin implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source.equals(view.getbtnMasuk())){
-            btnLoginActionPerformed();
+            btnMasukActionPerformed();
 //        } else if(source.equals(view.getbtnDaftar())){
 //            btnDaftarActionPerformed();
         }
     }
     
-    public void btnLoginActionPerformed(){
+    public void btnMasukActionPerformed(){
         username = view.getTfUsername();
         password = view.getTfPassword();
         String nama;
         if(username.isEmpty() || password.isEmpty()){
             view.showMessage("Masukkan Username dan Password", "Error", 0);
         }else{
-            if(kn.cekUserLogin(username, password)){
-                idUser = kn.cariId_user(username);
-                System.out.println(idUser);
+            if(kn.cekAdminLogin(username, password)){
+                idAdmin = kn.cariId_Admin(username);
+                System.out.println(idAdmin);
                 view.showMessage("Selamat Datang ", "Login Berhasil",1);
                 HomeAfterLogin home = new HomeAfterLogin();
                 home.setUsername(username);

@@ -11,9 +11,6 @@ package Model;
  */
 public class User extends PERSON{
 
-    public static void add(User m) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     private String id_user;
     private String no_telp;
 

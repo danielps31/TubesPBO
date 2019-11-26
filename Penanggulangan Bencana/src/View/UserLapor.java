@@ -5,6 +5,9 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
 /**
  *
  * @author ACER
@@ -32,14 +35,14 @@ public class UserLapor extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        username = new javax.swing.JLabel();
         Home = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        btnHome = new javax.swing.JButton();
         Masuk1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         Bantu = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        btnBantu = new javax.swing.JButton();
+        Username = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -69,11 +72,6 @@ public class UserLapor extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(7, 87, 91));
 
-        username.setBackground(new java.awt.Color(7, 87, 91));
-        username.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        username.setForeground(new java.awt.Color(255, 255, 255));
-        username.setText("@USERNAME  |");
-
         Home.setBackground(new java.awt.Color(7, 87, 91));
         Home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -81,9 +79,15 @@ public class UserLapor extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("HOME");
+        btnHome.setBackground(new java.awt.Color(7, 87, 91));
+        btnHome.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setText("HOME");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout HomeLayout = new javax.swing.GroupLayout(Home);
         Home.setLayout(HomeLayout);
@@ -91,14 +95,14 @@ public class UserLapor extends javax.swing.JFrame {
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
         );
         HomeLayout.setVerticalGroup(
             HomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(btnHome)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -131,7 +135,7 @@ public class UserLapor extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         Bantu.setBackground(new java.awt.Color(7, 87, 91));
@@ -141,35 +145,43 @@ public class UserLapor extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("BANTU SESAMA");
+        btnBantu.setBackground(new java.awt.Color(7, 87, 91));
+        btnBantu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnBantu.setForeground(new java.awt.Color(255, 255, 255));
+        btnBantu.setText("BANTU SESAMA");
+        btnBantu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBantuActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout BantuLayout = new javax.swing.GroupLayout(Bantu);
         Bantu.setLayout(BantuLayout);
         BantuLayout.setHorizontalGroup(
             BantuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BantuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnBantu, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 40, Short.MAX_VALUE))
         );
         BantuLayout.setVerticalGroup(
             BantuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BantuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel8)
+                .addComponent(btnBantu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        Username.setBackground(new java.awt.Color(7, 87, 91));
+        Username.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Username.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Masuk1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,13 +191,12 @@ public class UserLapor extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Masuk1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(Bantu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LOGOFIX.png"))); // NOI18N
@@ -197,7 +208,7 @@ public class UserLapor extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -290,9 +301,9 @@ public class UserLapor extends javax.swing.JFrame {
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel7)
-                .addGap(58, 58, 58)
+                .addGap(49, 49, 49)
                 .addComponent(Jenis_bencana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,7 +363,7 @@ public class UserLapor extends javax.swing.JFrame {
 
     private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
         // TODO add your handling code here:
-        Bantuan a = new Bantuan();
+        BantuSesama a = new BantuSesama();
         a.setVisible(true);
         
         this.dispose();
@@ -409,6 +420,32 @@ public class UserLapor extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_KeteranganFocusLost
 
+    private void btnBantuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBantuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBantuActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+        public JButton getbtnHome() {
+        return btnHome;
+    }
+
+    public JButton getbtnBantu() {
+        return btnBantu;
+    }
+    
+        
+    public void addActionListener(ActionListener x){
+        btnHome.addActionListener(x);
+        btnBantu.addActionListener(x);
+    }
+    
+    public void setUsername(String Username) {
+        this.Username.setText(Username);
+    }
+    
 
     /**
      * @param args the command line arguments
@@ -454,12 +491,13 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JTextArea Keterangan;
     private javax.swing.JTextField Lokasi;
     private javax.swing.JPanel Masuk1;
+    private javax.swing.JLabel Username;
+    private javax.swing.JButton btnBantu;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -468,6 +506,5 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

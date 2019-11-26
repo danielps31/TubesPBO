@@ -5,6 +5,10 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ACER
@@ -37,7 +41,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         tfPassword = new javax.swing.JPasswordField();
         btnMasuk = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLoginUser = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         Logo = new javax.swing.JPanel();
         Logo1 = new javax.swing.JLabel();
@@ -105,8 +109,8 @@ public class LoginAdmin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ATAU");
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("LOGIN USER");
+        btnLoginUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnLoginUser.setText("LOGIN USER");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -130,7 +134,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnLoginUser, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -153,7 +157,7 @@ public class LoginAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnMasuk, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnLoginUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(166, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
@@ -252,7 +256,33 @@ public class LoginAdmin extends javax.swing.JFrame {
     private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoMouseClicked
+    public JButton getbtnMasuk() {
+        return btnMasuk;
+    }
+    
+        public void addActionListener(ActionListener x){
+        btnMasuk.addActionListener(x);
+    }
+        public String getTfPassword() {
+        return tfPassword.getText();
+    }
 
+    public void setTfPassword(String tfPassword) {
+        this.tfPassword.setText(tfPassword);
+    }
+
+    public String getTfUsername() {
+        return tfUsername.getText();
+    }
+
+    public void setTfUsername(String tfUsername) {
+        this.tfUsername.setText(tfUsername);
+    }
+    
+        public void showMessage(String message, String title, int type){
+        JOptionPane.showMessageDialog(null, message, title, type);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -291,8 +321,8 @@ public class LoginAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Logo;
     private javax.swing.JLabel Logo1;
+    private javax.swing.JButton btnLoginUser;
     private javax.swing.JButton btnMasuk;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;

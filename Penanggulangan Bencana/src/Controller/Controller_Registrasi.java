@@ -16,17 +16,14 @@ import javax.swing.table.DefaultTableModel;
  * @author shamgar
  */
 public class Controller_Registrasi implements ActionListener {
-    
+
     private Registrasi view;
     private Koneksi kn;
-    private String id_user;
+    private int id_user;
     private String username;
     private String password;
-    private String no_telp;
-    private String email;
-    private String nama;
-    
-    public Controller_Registrasi(){
+
+    public Controller_Registrasi() {
         kn = new Koneksi();
         view = new Registrasi();
         view.addActionListener(this);
@@ -36,34 +33,41 @@ public class Controller_Registrasi implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (source.equals(view.getbtnDaftar())){
+        if (source.equals(view.getbtnDaftar())) {
             btnDaftarActionPerformed();
         }
     }
-    
-    
-     public void btnDaftarActionPerformed(){
-         
-        String nama     = view.getTfNama();
-        String email    = view.getTfEmail();
-        String no_telp  = view.getTfNo_telp();
+
+    public void btnDaftarActionPerformed() {
+
+        String nama = view.getTfNama();
+        String email = view.getTfEmail();
+        String no_telp = view.getTfNo_telp();
         String username = view.getTfUsername();
         String password = view.getTfPassword();
-        String id_user = view.getTfId_user();
-        if(nama.isEmpty() || username.isEmpty() || password.isEmpty() || email.isEmpty() || no_telp.isEmpty()){
+        if (nama.isEmpty() || username.isEmpty() || password.isEmpty() || email.isEmpty() || no_telp.isEmpty()) {
             view.showMessage("Ada Bagian kosong!!!", "Error", 0);
-        }else{
-            if(kn.cekDuplikasiUsername(username)){
+        } else {
+            if (kn.cekDuplikasiUsername(username)) {
                 view.showMessage("Username Sudah Ada", "Error", 1);
-                } else {
-                    kn.addUser(new User(username,no_telp,nama,email,password,id_user));
+            } else {
+                if (kn.addUser(new User(null, no_telp,username,nama,email,password))) {
                     view.showMessage("data berhasil ditambah", "Succes", 2);
+<<<<<<< HEAD
                     HomeAfterLogin home = new HomeAfterLogin();
                      home.setUsername(username);
                      view.setVisible(false);
                      home.setVisible(true);
                     }
+=======
+                 new Controller_HomeAfterLogin(username);
+                view.setVisible(false);
+                }else{
+                    view.showMessage("data gagal ditambah", "Error", 1);
+                }
+
+>>>>>>> 12d3d873a60154d57b4562fcef2a89e9df808f2f
             }
         }
     }
-
+}
