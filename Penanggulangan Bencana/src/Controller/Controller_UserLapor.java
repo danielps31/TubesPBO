@@ -64,10 +64,10 @@ public class Controller_UserLapor implements ActionListener{
        String keterangan_bencana = lapor.getTfKeterangan();
        
        if(jenis_bencana.isEmpty() || jam.isEmpty() || lokasi_bencana.isEmpty() || keterangan_bencana.isEmpty()){     
-       lapor.showMessage("Masukkan Username dan Password", "Error", 0);
+       lapor.showMessage("Masih Ada Field Kosong", "Error", 0);
         } else{
               if(kn.addPeristiwa(new Peristiwa(null,jenis_bencana,jam,lokasi_bencana,keterangan_bencana)))
-                     lapor.showMessage("Data Telah Berhasil Ditambahkan!", "Sukses", 0);
+                     lapor.showMessage("Data Telah Berhasil Ditambahkan!", "Sukses", 1);
                      new Controller_HomeAfterLogin(username);
                      lapor.setVisible(false);
                   }

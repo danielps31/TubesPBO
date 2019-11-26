@@ -8,18 +8,19 @@ package View;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author ACER
  */
-public class UserLapor extends javax.swing.JFrame {
+public class AdminLapor extends javax.swing.JFrame {
 
     /**
-     * Creates new form UserLapor
+     * Creates new form AdminLapor
      */
-    public UserLapor() {
+    public AdminLapor() {
         initComponents();
     }
 
@@ -32,9 +33,6 @@ public class UserLapor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         Home = new javax.swing.JPanel();
@@ -48,25 +46,10 @@ public class UserLapor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        tfJenisBencana = new javax.swing.JTextField();
-        tfLokasi = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tfKeterangan = new javax.swing.JTextArea();
-        tfJam = new javax.swing.JTextField();
-        btnSubmit = new javax.swing.JButton();
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        jLabel9.setText("jLabel9");
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tbBantuan = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        btnEditStatus = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -210,7 +193,7 @@ public class UserLapor extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -225,147 +208,87 @@ public class UserLapor extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(102, 165, 173));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel7.setText("LAPORKAN BENCANA!");
+        jLabel7.setText("Daftar Laporan Bencana");
 
-        tfJenisBencana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        tfJenisBencana.setText("Jenis Bencana");
-        tfJenisBencana.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                tfJenisBencanaFocusGained(evt);
+        tbBantuan.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
             }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                tfJenisBencanaFocusLost(evt);
-            }
-        });
-        tfJenisBencana.addActionListener(new java.awt.event.ActionListener() {
+        ));
+        jScrollPane2.setViewportView(tbBantuan);
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfJenisBencanaActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        tfLokasi.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        tfLokasi.setText("Lokasi");
-        tfLokasi.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                tfLokasiFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                tfLokasiFocusLost(evt);
-            }
-        });
-        tfLokasi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfLokasiActionPerformed(evt);
-            }
-        });
-
-        tfKeterangan.setColumns(20);
-        tfKeterangan.setRows(5);
-        tfKeterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
-        tfKeterangan.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                tfKeteranganFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                tfKeteranganFocusLost(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tfKeterangan);
-
-        tfJam.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        tfJam.setText("Jam");
-        tfJam.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                tfJamFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                tfJamFocusLost(evt);
-            }
-        });
-        tfJam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfJamActionPerformed(evt);
-            }
-        });
-
-        btnSubmit.setBackground(new java.awt.Color(7, 87, 91));
-        btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnSubmit.setForeground(new java.awt.Color(255, 255, 255));
-        btnSubmit.setText("SUBMIT");
-        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitActionPerformed(evt);
-            }
-        });
+        btnEditStatus.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnEditStatus.setText("EDIT STATUS");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7))
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 997, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfJenisBencana)
-                            .addComponent(tfLokasi, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 904, Short.MAX_VALUE)
-                            .addComponent(tfJam))))
-                .addContainerGap(97, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
+                        .addComponent(jLabel7)
+                        .addGap(0, 623, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnEditStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel7)
-                .addGap(51, 51, 51)
-                .addComponent(tfJenisBencana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfJam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(tfLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, Short.MAX_VALUE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(btnEditStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
@@ -375,148 +298,41 @@ public class UserLapor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Masuk1MouseClicked
 
-    private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_BantuMouseClicked
-
-    private void tfJenisBencanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJenisBencanaActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_tfJenisBencanaActionPerformed
-
-    private void tfLokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLokasiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfLokasiActionPerformed
-
-    private void tfJenisBencanaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJenisBencanaFocusGained
-        // TODO add your handling code here:
-    if(tfJenisBencana.getText().equals("Jenis Bencana")){
-            tfJenisBencana.setText("");
-        }
-    }//GEN-LAST:event_tfJenisBencanaFocusGained
-
-    private void tfJenisBencanaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJenisBencanaFocusLost
-        // TODO add your handling code here:
-    if(tfJenisBencana.getText().equals("Jenis Bencana")){
-            tfJenisBencana.setText("");
-        }
-    }//GEN-LAST:event_tfJenisBencanaFocusLost
-
-    private void tfLokasiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfLokasiFocusGained
-        // TODO add your handling code here:
-    if(tfLokasi.getText().equals("Lokasi")){
-            tfLokasi.setText("");
-        }
-    }//GEN-LAST:event_tfLokasiFocusGained
-
-    private void tfLokasiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfLokasiFocusLost
-        // TODO add your handling code here:
-    if(tfLokasi.getText().equals("Lokasi")){
-            tfLokasi.setText("Lokasi");
-        }
-    }//GEN-LAST:event_tfLokasiFocusLost
-
-    private void tfKeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusGained
-        // TODO add your handling code here:
-        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            tfKeterangan.setText("");
-        }
-    }//GEN-LAST:event_tfKeteranganFocusGained
-
-    private void tfKeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusLost
-        // TODO add your handling code here:
-    if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            tfKeterangan.setText("");
-        }
-    }//GEN-LAST:event_tfKeteranganFocusLost
-
     private void btnBantuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBantuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBantuActionPerformed
 
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+    private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnHomeActionPerformed
+    }//GEN-LAST:event_BantuMouseClicked
 
-    private void tfJamFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJamFocusGained
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-                        if(tfJam.getText().equals("Jam")){
-            tfJam.setText("");   }  
-    }//GEN-LAST:event_tfJamFocusGained
-
-    private void tfJamFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJamFocusLost
-        // TODO add your handling code here:
-                if(tfJam.getText().equals("Jam")){
-            tfJam.setText("");   }     
-    }//GEN-LAST:event_tfJamFocusLost
-
-    private void tfJamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfJamActionPerformed
-
-    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSubmitActionPerformed
-
-    public JButton getbtnHome() {
-        return btnHome;
-    }
-
-    public JButton getbtnBantu() {
-        return btnBantu;
-    }
-    public JButton getbtnSubmit(){
-        return btnSubmit;
-    }
-    
-        
-    public void addActionListener(ActionListener x){
-        btnHome.addActionListener(x);
-        btnBantu.addActionListener(x);
-        btnSubmit.addActionListener(x);
-    }
-    
+    }//GEN-LAST:event_jTextField1ActionPerformed
     public void setUsername(String Username) {
         this.Username.setText(Username);
     }
-    
-    public String getTfJenisBencana() {
-        return tfJenisBencana.getText();
+    public JButton getbtnEditStatus() {
+        return btnEditStatus;
+    }    
+    public void addActionListener(ActionListener x){
+        btnEditStatus.addActionListener(x);
     }
-
-    public void setTfJenisBencana(String tfJenisBencana) {
-        this.tfJenisBencana.setText(tfJenisBencana);
-    }
-
-    public String getTfJam() {
-        return tfJam.getText();
-    }
-
-    public void setTfJam(String tfJam) {
-        this.tfJam.setText(tfJam);
-    }
-    
-    public String getTfLokasi() {
-        return tfLokasi.getText();
-    }
-
-    public void setTfLokasi(String tfLokasi) {
-        this.tfLokasi.setText(tfLokasi);
-    }
-    
-    public String getTfKeterangan() {
-        return tfKeterangan.getText();
-    }
-
-    public void setTfKeterangan(String tfKeterangan) {
-        this.tfKeterangan.setText(tfKeterangan);
-    }
-        
     public void showMessage(String message, String title, int type){
         JOptionPane.showMessageDialog(null, message, title, type);
+    }    
+    public JTable getTbBantuan() {
+        return tbBantuan;
     }
-
+    
+    public int getSelecctedTbBantuan(){
+        return tbBantuan.getSelectedRow();
+    }
+    
+    public void setTbBantuan(DefaultTableModel x){
+        tbBantuan.setModel(x);
+    }    
+    
     /**
      * @param args the command line arguments
      */
@@ -534,21 +350,20 @@ public class UserLapor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminLapor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserLapor().setVisible(true);
+                new AdminLapor().setVisible(true);
             }
         });
     }
@@ -559,22 +374,17 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JPanel Masuk1;
     private javax.swing.JLabel Username;
     private javax.swing.JButton btnBantu;
+    private javax.swing.JButton btnEditStatus;
     private javax.swing.JButton btnHome;
-    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField tfJam;
-    private javax.swing.JTextField tfJenisBencana;
-    private javax.swing.JTextArea tfKeterangan;
-    private javax.swing.JTextField tfLokasi;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tbBantuan;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,11 +22,15 @@ public class Koneksi {
     private ArrayList<User> user = new ArrayList<>();
     private ArrayList<Admin> admin = new ArrayList<>();
     private ArrayList<Peristiwa> peristiwa = new ArrayList<>();
-
+    private ArrayList<Bantuan> bantuan = new ArrayList<>();
+    
+    
+    
     public Koneksi() {
         loadUser();
         loadAdmin();
         loadPeristiwa();
+        loadBantuan();
     }
 
     public void connect() {
@@ -103,6 +107,22 @@ public class Koneksi {
         }
         disconnect();
     }
+       public void loadBantuan() {
+        connect();
+        try {
+            String query = "SELECT * FROM bantuan";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                bantuan.add(new Bantuan(rs.getString("id_bantuan"), rs.getString("jenis_bantuan"), rs.getString("tanggal_pengiriman"), rs.getString("keterangan_bantuan")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+    }
+        
+        
+        
     public boolean cekUserLogin(String q, String p) {
         boolean cek = false;
         for (User u : user) {
@@ -186,9 +206,38 @@ public class Koneksi {
         
         return isValid;
     }
-  
+        public boolean addBantuan(Bantuan b) {
+        boolean isValid = true;
+
+        connect();
+        String query = "INSERT INTO bantuan"
+                + "(`jenis_bantuan`, `tanggal_pengiriman`, `keterangan_bantuan`, `id_bantuan` "
+                + ") VALUES (";
+        query += "'" + b.getJenis_bantuan() + "',";
+        query += "'" + b.getTanggal_bantuan() + "',";
+        query += "'" + b.getKeterangan_bantuan() + "',";
+        query += "NULL";
+        query += ")";
+        if (manipulate(query)) {
+            int id = loadBantuanId(b.getId_bantuan());
+            if(id == -1) b.setId_bantuan(""+id);
+            else b.setId_bantuan(null);
+            bantuan.add(b);
+        }else{
+            isValid = false;
+        }
+        disconnect();
+        
+        return isValid;
+    }
+        
+        
     public ArrayList<Peristiwa> getPeristiwa() {
         return peristiwa;
+    }
+    
+      public ArrayList<Bantuan> getBantuan() {
+        return bantuan;
     }
     
     
@@ -221,7 +270,7 @@ public class Koneksi {
         return id;
     }
     
-        public int loadPeristiwaId(String username) {
+        public int loadPeristiwaId(String id_peristiwa) {
         int id = -1;
         connect();
         try {
@@ -237,7 +286,22 @@ public class Koneksi {
         
         return id;
     }
-    
+        public int loadBantuanId(String id_bantuan) {
+        int id = -1;
+        connect();
+        try {
+            String query = "SELECT * FROM bantuan";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                id = rs.getInt("id_bantuan");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+        
+        return id;
+    }    
 
     public boolean cekAdminLogin(String q, String p) {
         boolean cek = false;

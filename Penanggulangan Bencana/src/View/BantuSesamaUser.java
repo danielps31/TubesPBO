@@ -8,6 +8,7 @@ package View;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -17,12 +18,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ACER
  */
-public class BantuSesama extends javax.swing.JFrame {
+public class BantuSesamaUser extends javax.swing.JFrame {
 
     /**
      * Creates new form Bantuan
      */
-    public BantuSesama() {
+    public BantuSesamaUser() {
         initComponents();
     }
 
@@ -39,8 +40,8 @@ public class BantuSesama extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         tfTanggalPengiriman = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tfKeterangan = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
+        tfKeteranganBantuan = new javax.swing.JTextArea();
+        btnSubmit = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbBantuan = new javax.swing.JTable();
         tfJenisBantuan = new javax.swing.JTextField();
@@ -80,21 +81,21 @@ public class BantuSesama extends javax.swing.JFrame {
             }
         });
 
-        tfKeterangan.setColumns(20);
-        tfKeterangan.setRows(5);
-        tfKeterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
-        tfKeterangan.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfKeteranganBantuan.setColumns(20);
+        tfKeteranganBantuan.setRows(5);
+        tfKeteranganBantuan.setText("TAMBAHKAN KETERANGAN DISINI.....");
+        tfKeteranganBantuan.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                tfKeteranganFocusGained(evt);
+                tfKeteranganBantuanFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                tfKeteranganFocusLost(evt);
+                tfKeteranganBantuanFocusLost(evt);
             }
         });
-        jScrollPane1.setViewportView(tfKeterangan);
+        jScrollPane1.setViewportView(tfKeteranganBantuan);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setText("Submit");
+        btnSubmit.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnSubmit.setText("Submit");
 
         tbBantuan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,7 +138,7 @@ public class BantuSesama extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(154, 154, 154))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -165,7 +166,7 @@ public class BantuSesama extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -363,19 +364,19 @@ public class BantuSesama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHomeActionPerformed
 
-    private void tfKeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusLost
+    private void tfKeteranganBantuanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganBantuanFocusLost
         // TODO add your handling code here:
-        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            tfKeterangan.setText("");
+        if(tfKeteranganBantuan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeteranganBantuan.setText("");
         }
-    }//GEN-LAST:event_tfKeteranganFocusLost
+    }//GEN-LAST:event_tfKeteranganBantuanFocusLost
 
-    private void tfKeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusGained
+    private void tfKeteranganBantuanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganBantuanFocusGained
         // TODO add your handling code here:
-        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            tfKeterangan.setText("");
+        if(tfKeteranganBantuan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeteranganBantuan.setText("");
         }
-    }//GEN-LAST:event_tfKeteranganFocusGained
+    }//GEN-LAST:event_tfKeteranganBantuanFocusGained
 
     private void tfTanggalPengirimanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanActionPerformed
         // TODO add your handling code here:
@@ -413,35 +414,49 @@ public class BantuSesama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tfJenisBantuanActionPerformed
 
-    public JTextField getJAM() {
-        return tfTanggalPengiriman;
+    public void setTfJenisBantuan(String tfJenisBantuan) {
+        this.tfJenisBantuan.setText(tfJenisBantuan);
     }
 
-    public void setJAM(JTextField JAM) {
-        this.tfTanggalPengiriman = JAM;
+    public String getTfJenisBantuan() {
+        return tfJenisBantuan.getText();
+    }
+    
+    public void setTfTanggalPengiriman(String tfTanggalPengiriman) {
+        this.tfTanggalPengiriman.setText(tfTanggalPengiriman);
     }
 
-    public JTextArea getKeterangan() {
-        return tfKeterangan;
+    public String getTfTanggalPengiriman() {
+        return tfTanggalPengiriman.getText();
+    }    
+    
+    public void setTfKeteranganBantuan(String tfKeteranganBantuan) {
+        this.tfKeteranganBantuan.setText(tfKeteranganBantuan);
     }
 
-    public void setKeterangan(JTextArea Keterangan) {
-        this.tfKeterangan = Keterangan;
-    }
-
+    public String getTfKeteranganBantuan() {
+        return tfKeteranganBantuan.getText();
+    }    
+    
+    
     public JButton getbtnLaporkan() {
         return btnLaporkan;
     }
     public JButton getbtnHome() {
         return btnHome;
+    }
+
+    public JButton getbtnSubmit(){
+        return btnSubmit;
     }    
     public void setUsername(String Username) {
         this.Username.setText(Username);
     }
     
-        public void addActionListener(ActionListener x){
+    public void addActionListener(ActionListener x){
         btnHome.addActionListener(x);
         btnLaporkan.addActionListener(x);
+        btnSubmit.addActionListener(x);
     }
     public JTable getTbBantuan() {
         return tbBantuan;
@@ -454,7 +469,9 @@ public class BantuSesama extends javax.swing.JFrame {
     public void setTbBantuan(DefaultTableModel x){
         tbBantuan.setModel(x);
     }
-    
+    public void showMessage(String message, String title, int type){
+        JOptionPane.showMessageDialog(null, message, title, type);
+    }    
      
     /**
      * @param args the command line arguments
@@ -473,14 +490,18 @@ public class BantuSesama extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BantuSesama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BantuSesamaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BantuSesama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BantuSesamaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BantuSesama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BantuSesamaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BantuSesama.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BantuSesamaUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -489,7 +510,7 @@ public class BantuSesama extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BantuSesama().setVisible(true);
+                new BantuSesamaUser().setVisible(true);
             }
         });
     }
@@ -501,7 +522,7 @@ public class BantuSesama extends javax.swing.JFrame {
     private javax.swing.JLabel Username;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLaporkan;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
@@ -514,7 +535,7 @@ public class BantuSesama extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tbBantuan;
     private javax.swing.JTextField tfJenisBantuan;
-    private javax.swing.JTextArea tfKeterangan;
+    private javax.swing.JTextArea tfKeteranganBantuan;
     private javax.swing.JTextField tfTanggalPengiriman;
     // End of variables declaration//GEN-END:variables
 }
