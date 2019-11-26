@@ -5,6 +5,7 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -36,9 +37,8 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         Home = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        Bantu = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        Laporkan = new javax.swing.JButton();
+        btnLaporkan = new javax.swing.JButton();
+        btnBantu = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -83,41 +83,26 @@ public class HomeAfterLogin extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        Bantu.setBackground(new java.awt.Color(7, 87, 91));
-        Bantu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BantuMouseClicked(evt);
+        btnLaporkan.setBackground(new java.awt.Color(7, 87, 91));
+        btnLaporkan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnLaporkan.setForeground(new java.awt.Color(255, 255, 255));
+        btnLaporkan.setText("LAPORKAN");
+        btnLaporkan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLaporkanActionPerformed(evt);
             }
         });
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("BANTU SESAMA");
-
-        javax.swing.GroupLayout BantuLayout = new javax.swing.GroupLayout(Bantu);
-        Bantu.setLayout(BantuLayout);
-        BantuLayout.setHorizontalGroup(
-            BantuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BantuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        BantuLayout.setVerticalGroup(
-            BantuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BantuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        Laporkan.setText("LAPORKAN");
-        Laporkan.addActionListener(new java.awt.event.ActionListener() {
+        btnBantu.setBackground(new java.awt.Color(7, 87, 91));
+        btnBantu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnBantu.setForeground(new java.awt.Color(255, 255, 255));
+        btnBantu.setText("BANTU SESAMA");
+        btnBantu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LaporkanActionPerformed(evt);
+                btnBantuActionPerformed(evt);
             }
         });
 
@@ -126,26 +111,26 @@ public class HomeAfterLogin extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(Username, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(Home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addComponent(Laporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(Bantu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnLaporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnBantu, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(Bantu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Laporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnLaporkan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBantu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Username, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/LOGOFIX.png"))); // NOI18N
@@ -157,7 +142,7 @@ public class HomeAfterLogin extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -230,26 +215,29 @@ public class HomeAfterLogin extends javax.swing.JFrame {
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
-        view_homepage a = new view_homepage();
-        a.setVisible(true);
-
-        this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
 
-    private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
+    private void btnLaporkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporkanActionPerformed
         // TODO add your handling code here:
-        Bantuan a = new Bantuan();
-        a.setVisible(true);
-        
-        this.dispose();
-        
-    }//GEN-LAST:event_BantuMouseClicked
+    }//GEN-LAST:event_btnLaporkanActionPerformed
 
-    private void LaporkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LaporkanActionPerformed
+    private void btnBantuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBantuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LaporkanActionPerformed
+    }//GEN-LAST:event_btnBantuActionPerformed
 
-
+    public JButton getbtnLaporkan() {
+        return btnLaporkan;
+    }
+    
+    public JButton getbtnBantu() {
+        return btnBantu;
+    }
+    
+    public void addActionListener(ActionListener x){
+        btnBantu.addActionListener(x);
+        btnLaporkan.addActionListener(x);
+    }
+    
 
     public void setUsername(String Username) {
         this.Username.setText(Username);
@@ -293,12 +281,11 @@ public class HomeAfterLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Bantu;
     private javax.swing.JPanel Home;
-    private javax.swing.JButton Laporkan;
     private javax.swing.JLabel Username;
+    private javax.swing.JButton btnBantu;
+    private javax.swing.JButton btnLaporkan;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -308,4 +295,5 @@ public class HomeAfterLogin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+    
 }
