@@ -26,6 +26,7 @@ public class Koneksi {
     public Koneksi() {
         loadUser();
         loadAdmin();
+        loadPeristiwa();
     }
 
     public void connect() {
@@ -83,6 +84,19 @@ public class Koneksi {
             rs = stmt.executeQuery(query);
             while (rs.next()) {
                 admin.add(new Admin(rs.getString("id_admin"), rs.getString("username"), rs.getString("nama"), rs.getString("email"), rs.getString("password")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+    }
+        public void loadPeristiwa() {
+        connect();
+        try {
+            String query = "SELECT * FROM peristiwa";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                peristiwa.add(new Peristiwa(rs.getString("id_peristiwa"), rs.getString("jenis_bencana"), rs.getString("jam"), rs.getString("lokasi_bencana"), rs.getString("keterangan_bencana")));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
@@ -147,6 +161,46 @@ public class Koneksi {
         
         return isValid;
     }
+        public boolean addPeristiwa(Peristiwa p) {
+        boolean isValid = true;
+
+        connect();
+        String query = "INSERT INTO peristiwa"
+                + "(`jenis_bencana`, `jam`, `lokasi_bencana`, `keterangan_bencana`, `id_peristiwa`) "
+                + " VALUES (";
+        query += "'" + p.getJenis_bencana() + "',";
+        query += "'" + p.getJam() + "',";
+        query += "'" + p.getLokasi() + "',";
+        query += "'" + p.getKeterangan_peristiwa() + "',";
+        query += "NULL";
+        query += ")";
+        if (manipulate(query)) {
+            int id = loadPeristiwaId(p.getId_peristiwa());
+            if(id == -1) p.setId_peristiwa(""+id);
+            else p.setId_peristiwa(null);
+            peristiwa.add(p);
+        }else{
+            isValid = false;
+        }
+        disconnect();
+        
+        return isValid;
+    }
+  
+    
+    
+    
+//        public void addPeristiwa(Peristiwa m) {
+//        connect();
+//        String query = "INSERT INTO peristiwa VALUES (";
+//        query += "'" + m.getJenis_bencana() + "',";
+//        query += "'" + m.getJam() + "',";
+//        query += "'" + m.getLokasi() + "',";
+//        query += "'" + m.getKeterangan_peristiwa() + "'";
+//        query += ")";
+//        if (manipulate(query)) peristiwa.add(m);
+//        disconnect();
+// }
     
     public int loadUserId(String username) {
         int id = -1;
@@ -156,6 +210,23 @@ public class Koneksi {
             rs = stmt.executeQuery(query);
             while (rs.next()) {
                 id = rs.getInt("id_user");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+        
+        return id;
+    }
+    
+        public int loadPeristiwaId(String username) {
+        int id = -1;
+        connect();
+        try {
+            String query = "SELECT * FROM peristiwa";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                id = rs.getInt("id_peristiwa");
             }
         } catch (SQLException ex) {
             Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);

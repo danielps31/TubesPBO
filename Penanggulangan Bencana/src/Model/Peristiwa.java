@@ -9,22 +9,20 @@ package Model;
  *
  * @author Shamgar
  */
-public class Peristiwa extends Bantuan{
+public class Peristiwa {
     private String id_peristiwa;
     private String jenis_bencana;
     private String jam;
     private String lokasi;
     private String keterangan_peristiwa;
-    private Bantuan[] bantuan;
 
-    public Peristiwa(String id_peristiwa, String jenis_bencana, String jam, String lokasi, String keterangan_peristiwa, Bantuan[] bantuan, String id_bantuan, String jenis_bantuan, String tanggal_bantuan, String keterangan_bantuan) {
-        super(id_bantuan, jenis_bantuan, tanggal_bantuan, keterangan_bantuan);
+    public Peristiwa(String id_peristiwa, String jenis_bencana, String jam, String lokasi, String keterangan_peristiwa) {
+       
         this.id_peristiwa = id_peristiwa;
         this.jenis_bencana = jenis_bencana;
         this.jam = jam;
         this.lokasi = lokasi;
         this.keterangan_peristiwa = keterangan_peristiwa;
-        this.bantuan = bantuan;
     }
 
     public String getId_peristiwa() {
@@ -65,14 +63,6 @@ public class Peristiwa extends Bantuan{
 
     public void setKeterangan_peristiwa(String keterangan_peristiwa) {
         this.keterangan_peristiwa = keterangan_peristiwa;
-    }
-
-    public Bantuan[] getBantuan() {
-        return bantuan;
-    }
-
-    public void setBantuan(Bantuan[] bantuan) {
-        this.bantuan = bantuan;
     }
 
 }

@@ -366,14 +366,14 @@ public class BantuSesama extends javax.swing.JFrame {
 
     private void tfTanggalPengirimanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanFocusLost
         // TODO add your handling code here:
-        if(tfTanggalPengiriman.getText().equals("Jam")){
+        if(tfTanggalPengiriman.getText().equals("Tanggal Pengiriman")){
             tfTanggalPengiriman.setText("");
         }
     }//GEN-LAST:event_tfTanggalPengirimanFocusLost
 
     private void tfTanggalPengirimanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanFocusGained
         // TODO add your handling code here:
-        if(tfTanggalPengiriman.getText().equals("Jam")){
+        if(tfTanggalPengiriman.getText().equals("Tanggal Pengiriman")){
             tfTanggalPengiriman.setText("");
         }
     }//GEN-LAST:event_tfTanggalPengirimanFocusGained
