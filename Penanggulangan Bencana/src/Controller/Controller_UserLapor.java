@@ -44,9 +44,9 @@ public class Controller_UserLapor implements ActionListener{
         } else if(source.equals(lapor.getbtnSubmit())){
             btnSubmitActionPerformed();
         }
-//        } else if(source.equals(lapor.getbtnHome)){
-//            btnSubmitActionPerformed();
-//        }
+         else if(source.equals(lapor.getbtnBantu())){
+            btnBantuActionPerformed();
+        }
     }
 
     public void btnHomeActionPerformed(){

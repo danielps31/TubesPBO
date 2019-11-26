@@ -9,6 +9,7 @@ import View.*;
 import Model.*;
 import java.awt.event.*;
 import java.util.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -18,15 +19,25 @@ public class Controller_BantuSesama implements ActionListener{
 
     private BantuSesama bantu;
     private String username;
+    private Koneksi kn;
 
     public Controller_BantuSesama(String username) {
         bantu = new BantuSesama();
         bantu.addActionListener(this);
         bantu.setVisible(true);
+        kn = new Koneksi();        
         this.username = username;
-        bantu.setUsername(username);        
+        bantu.setUsername(username); 
+        loadTableBantuan();
     }
-
+    public void loadTableBantuan(){
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Jenis Bencana", "Jam", "Lokasi", "Keterangan"}, 0);
+        ArrayList<Peristiwa> peristiwa = kn.getPeristiwa();
+        for (Peristiwa p : peristiwa) {
+            model.addRow(new Object[]{p.getJenis_bencana(), p.getJam(), p.getLokasi(), p.getKeterangan_peristiwa()});
+        }
+        bantu.setTbBantuan(model);
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
         bantu.setUsername(username);        

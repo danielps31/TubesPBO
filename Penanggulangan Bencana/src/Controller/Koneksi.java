@@ -187,7 +187,9 @@ public class Koneksi {
         return isValid;
     }
   
-    
+    public ArrayList<Peristiwa> getPeristiwa() {
+        return peristiwa;
+    }
     
     
 //        public void addPeristiwa(Peristiwa m) {
