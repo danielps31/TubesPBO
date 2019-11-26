@@ -35,8 +35,8 @@ public class Controller_loginAdmin implements ActionListener {
         Object source = e.getSource();
         if (source.equals(view.getbtnMasuk())){
             btnMasukActionPerformed();
-//        } else if(source.equals(view.getbtnDaftar())){
-//            btnDaftarActionPerformed();
+        }else if(source.equals(view.getbtnLoginUser())){
+            btnLoginUserActionPerformed();
         }
     }
     
@@ -61,5 +61,9 @@ public class Controller_loginAdmin implements ActionListener {
         }
     }   
     
+    public void btnLoginUserActionPerformed(){
+       new Controller_loginUser();
+       view.setVisible(false);
+    }
 
 }

@@ -111,6 +111,11 @@ public class LoginAdmin extends javax.swing.JFrame {
 
         btnLoginUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnLoginUser.setText("LOGIN USER");
+        btnLoginUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -256,12 +261,19 @@ public class LoginAdmin extends javax.swing.JFrame {
     private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoMouseClicked
+
+    private void btnLoginUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginUserActionPerformed
     public JButton getbtnMasuk() {
         return btnMasuk;
     }
-    
+    public JButton getbtnLoginUser() {
+        return btnLoginUser;
+    }
         public void addActionListener(ActionListener x){
         btnMasuk.addActionListener(x);
+        btnLoginUser.addActionListener(x);
     }
         public String getTfPassword() {
         return tfPassword.getText();
