@@ -51,10 +51,8 @@ public class Controller_loginAdmin implements ActionListener {
                 idAdmin = kn.cariId_Admin(username);
                 System.out.println(idAdmin);
                 view.showMessage("Selamat Datang ", "Login Berhasil",1);
-                HomeAfterLogin home = new HomeAfterLogin();
-                home.setUsername(username);
+                new Controller_HomeAfterLoginAdmin(username);
                 view.setVisible(false);
-                home.setVisible(true);
             } else {
                 view.showMessage("Username Atau Password Salah", "Login Failed", 2);
             }
