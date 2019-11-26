@@ -21,6 +21,7 @@ public class Koneksi {
     private ResultSet rs = null;
     private ArrayList<User> user = new ArrayList<>();
     private ArrayList<Admin> admin = new ArrayList<>();
+    private ArrayList<Peristiwa> peristiwa = new ArrayList<>();
 
     public Koneksi() {
         loadUser();

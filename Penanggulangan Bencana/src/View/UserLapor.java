@@ -7,6 +7,7 @@ package View;
 
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -46,11 +47,11 @@ public class UserLapor extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        Jenis_bencana = new javax.swing.JComboBox<>();
-        JAM = new javax.swing.JTextField();
-        Lokasi = new javax.swing.JTextField();
+        cbJenisBencana = new javax.swing.JComboBox<>();
+        tfJam = new javax.swing.JTextField();
+        tfLokasi = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Keterangan = new javax.swing.JTextArea();
+        tfKeterangan = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -225,53 +226,58 @@ public class UserLapor extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel7.setText("LAPORKAN BENCANA!");
 
-        Jenis_bencana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Jenis_bencana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gempa Bumi", "Tsunami", "Kebakaran Hutan", "Banjir", "Tornado" }));
-
-        JAM.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        JAM.setText("Jam");
-        JAM.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                JAMFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                JAMFocusLost(evt);
-            }
-        });
-        JAM.addActionListener(new java.awt.event.ActionListener() {
+        cbJenisBencana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        cbJenisBencana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Gempa Bumi", "Tsunami", "Kebakaran Hutan", "Banjir", "Tornado", "Lainnya(Tulis di keterangan!)" }));
+        cbJenisBencana.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JAMActionPerformed(evt);
+                cbJenisBencanaActionPerformed(evt);
             }
         });
 
-        Lokasi.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Lokasi.setText("Lokasi");
-        Lokasi.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfJam.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tfJam.setText("Jam");
+        tfJam.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                LokasiFocusGained(evt);
+                tfJamFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                LokasiFocusLost(evt);
+                tfJamFocusLost(evt);
             }
         });
-        Lokasi.addActionListener(new java.awt.event.ActionListener() {
+        tfJam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LokasiActionPerformed(evt);
+                tfJamActionPerformed(evt);
             }
         });
 
-        Keterangan.setColumns(20);
-        Keterangan.setRows(5);
-        Keterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
-        Keterangan.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfLokasi.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tfLokasi.setText("Lokasi");
+        tfLokasi.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                KeteranganFocusGained(evt);
+                tfLokasiFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                KeteranganFocusLost(evt);
+                tfLokasiFocusLost(evt);
             }
         });
-        jScrollPane1.setViewportView(Keterangan);
+        tfLokasi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfLokasiActionPerformed(evt);
+            }
+        });
+
+        tfKeterangan.setColumns(20);
+        tfKeterangan.setRows(5);
+        tfKeterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
+        tfKeterangan.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfKeteranganFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfKeteranganFocusLost(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tfKeterangan);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("Submit");
@@ -288,9 +294,9 @@ public class UserLapor extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JAM)
-                            .addComponent(Lokasi, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Jenis_bencana, 0, 904, Short.MAX_VALUE)
+                            .addComponent(tfJam)
+                            .addComponent(tfLokasi, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cbJenisBencana, 0, 904, Short.MAX_VALUE)
                             .addComponent(jScrollPane1))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
@@ -304,11 +310,11 @@ public class UserLapor extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jLabel7)
                 .addGap(49, 49, 49)
-                .addComponent(Jenis_bencana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbJenisBencana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfJam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(Lokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfLokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -347,78 +353,67 @@ public class UserLapor extends javax.swing.JFrame {
 
     private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
-        HomeAfterLogin a = new HomeAfterLogin();
-        a.setVisible(true);
-
-        this.dispose();
     }//GEN-LAST:event_HomeMouseClicked
 
     private void Masuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Masuk1MouseClicked
         // TODO add your handling code here:
-        Registrasi a = new Registrasi();
-        a.setVisible(true);
-
-        this.dispose();
     }//GEN-LAST:event_Masuk1MouseClicked
 
     private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
         // TODO add your handling code here:
-        BantuSesama a = new BantuSesama();
-        a.setVisible(true);
-        
-        this.dispose();
+
     }//GEN-LAST:event_BantuMouseClicked
 
-    private void JAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAMActionPerformed
+    private void tfJamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfJamActionPerformed
         // TODO add your handling code here:
 
-    }//GEN-LAST:event_JAMActionPerformed
+    }//GEN-LAST:event_tfJamActionPerformed
 
-    private void LokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LokasiActionPerformed
+    private void tfLokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfLokasiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LokasiActionPerformed
+    }//GEN-LAST:event_tfLokasiActionPerformed
 
-    private void JAMFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JAMFocusGained
+    private void tfJamFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJamFocusGained
         // TODO add your handling code here:
-                if(JAM.getText().equals("Jam")){
-            JAM.setText("");
+                if(tfJam.getText().equals("Jam")){
+            tfJam.setText("");
         }
-    }//GEN-LAST:event_JAMFocusGained
+    }//GEN-LAST:event_tfJamFocusGained
 
-    private void JAMFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JAMFocusLost
+    private void tfJamFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfJamFocusLost
         // TODO add your handling code here:
-                if(JAM.getText().equals("Jam")){
-            JAM.setText("");
+                if(tfJam.getText().equals("Jam")){
+            tfJam.setText("");
         }
-    }//GEN-LAST:event_JAMFocusLost
+    }//GEN-LAST:event_tfJamFocusLost
 
-    private void LokasiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LokasiFocusGained
+    private void tfLokasiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfLokasiFocusGained
         // TODO add your handling code here:
-                if(Lokasi.getText().equals("Lokasi")){
-            Lokasi.setText("");
+                if(tfLokasi.getText().equals("Lokasi")){
+            tfLokasi.setText("");
         }
-    }//GEN-LAST:event_LokasiFocusGained
+    }//GEN-LAST:event_tfLokasiFocusGained
 
-    private void LokasiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LokasiFocusLost
+    private void tfLokasiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfLokasiFocusLost
         // TODO add your handling code here:
-                if(Lokasi.getText().equals("Lokasi")){
-            Lokasi.setText("Lokasi");
+                if(tfLokasi.getText().equals("Lokasi")){
+            tfLokasi.setText("Lokasi");
         }
-    }//GEN-LAST:event_LokasiFocusLost
+    }//GEN-LAST:event_tfLokasiFocusLost
 
-    private void KeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_KeteranganFocusGained
+    private void tfKeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusGained
         // TODO add your handling code here:
-        if(Keterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            Keterangan.setText("");
+        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeterangan.setText("");
         }
-    }//GEN-LAST:event_KeteranganFocusGained
+    }//GEN-LAST:event_tfKeteranganFocusGained
 
-    private void KeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_KeteranganFocusLost
+    private void tfKeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusLost
         // TODO add your handling code here:
-                if(Keterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            Keterangan.setText("");
+                if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeterangan.setText("");
         }
-    }//GEN-LAST:event_KeteranganFocusLost
+    }//GEN-LAST:event_tfKeteranganFocusLost
 
     private void btnBantuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBantuActionPerformed
         // TODO add your handling code here:
@@ -427,6 +422,10 @@ public class UserLapor extends javax.swing.JFrame {
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void cbJenisBencanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbJenisBencanaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbJenisBencanaActionPerformed
 
         public JButton getbtnHome() {
         return btnHome;
@@ -445,7 +444,37 @@ public class UserLapor extends javax.swing.JFrame {
     public void setUsername(String Username) {
         this.Username.setText(Username);
     }
+    public String getJenisBencana(){
+        return cbJenisBencana.getSelectedItem().toString();
+    }
     
+    public void setJenisBencana(String x){
+        cbJenisBencana.setSelectedItem(x);
+    }
+
+    public String gettfJam() {
+        return tfJam.getText();
+    }
+
+    public void setTFJam(String tfJam) {
+        this.tfJam.setText(tfJam);
+    }
+    
+    public String getTFLokasi() {
+        return tfJam.getText();
+    }
+
+    public void setTFLokasi(String tfLokasi) {
+        this.tfLokasi.setText(tfLokasi);
+    }
+    
+    public String getTFKeterangan() {
+        return tfKeterangan.getText();
+    }
+
+    public void setTFKeterangan(String tfKeterangan) {
+        this.tfKeterangan.setText(tfKeterangan);
+    }
 
     /**
      * @param args the command line arguments
@@ -486,14 +515,11 @@ public class UserLapor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Bantu;
     private javax.swing.JPanel Home;
-    private javax.swing.JTextField JAM;
-    private javax.swing.JComboBox<String> Jenis_bencana;
-    private javax.swing.JTextArea Keterangan;
-    private javax.swing.JTextField Lokasi;
     private javax.swing.JPanel Masuk1;
     private javax.swing.JLabel Username;
     private javax.swing.JButton btnBantu;
     private javax.swing.JButton btnHome;
+    private javax.swing.JComboBox<String> cbJenisBencana;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -506,5 +532,8 @@ public class UserLapor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField tfJam;
+    private javax.swing.JTextArea tfKeterangan;
+    private javax.swing.JTextField tfLokasi;
     // End of variables declaration//GEN-END:variables
 }

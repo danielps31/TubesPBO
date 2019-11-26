@@ -35,12 +35,13 @@ public class BantuSesama extends javax.swing.JFrame {
 
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        Jenis_bencana = new javax.swing.JComboBox<>();
-        JAM = new javax.swing.JTextField();
-        Lokasi = new javax.swing.JTextField();
+        cbjenisBantuan = new javax.swing.JComboBox<>();
+        tfTanggalPengiriman = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Keterangan = new javax.swing.JTextArea();
+        tfKeterangan = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         Home = new javax.swing.JPanel();
@@ -58,102 +59,97 @@ public class BantuSesama extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(102, 165, 173));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel7.setText("BANTUAN ANDA!");
+        jLabel7.setText("Salurkan Bantuan Anda");
 
-        Jenis_bencana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Jenis_bencana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pakaian", "Makanan", "Uang", " " }));
-        Jenis_bencana.addActionListener(new java.awt.event.ActionListener() {
+        cbjenisBantuan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        cbjenisBantuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pakaian", "Makanan", "Uang", " " }));
+        cbjenisBantuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jenis_bencanaActionPerformed(evt);
+                cbjenisBantuanActionPerformed(evt);
             }
         });
 
-        JAM.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        JAM.setText("Jam");
-        JAM.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfTanggalPengiriman.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        tfTanggalPengiriman.setText("Tanggal Pengiriman");
+        tfTanggalPengiriman.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                JAMFocusGained(evt);
+                tfTanggalPengirimanFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                JAMFocusLost(evt);
+                tfTanggalPengirimanFocusLost(evt);
             }
         });
-        JAM.addActionListener(new java.awt.event.ActionListener() {
+        tfTanggalPengiriman.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JAMActionPerformed(evt);
+                tfTanggalPengirimanActionPerformed(evt);
             }
         });
 
-        Lokasi.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Lokasi.setText("Lokasi");
-        Lokasi.addFocusListener(new java.awt.event.FocusAdapter() {
+        tfKeterangan.setColumns(20);
+        tfKeterangan.setRows(5);
+        tfKeterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
+        tfKeterangan.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                LokasiFocusGained(evt);
+                tfKeteranganFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                LokasiFocusLost(evt);
+                tfKeteranganFocusLost(evt);
             }
         });
-        Lokasi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LokasiActionPerformed(evt);
-            }
-        });
-
-        Keterangan.setColumns(20);
-        Keterangan.setRows(5);
-        Keterangan.setText("TAMBAHKAN KETERANGAN DISINI.....");
-        Keterangan.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                KeteranganFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                KeteranganFocusLost(evt);
-            }
-        });
-        jScrollPane1.setViewportView(Keterangan);
+        jScrollPane1.setViewportView(tfKeterangan);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setText("Submit");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JAM)
-                            .addComponent(Lokasi, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Jenis_bencana, 0, 904, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                .addGap(154, 154, 154))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbjenisBantuan, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addComponent(tfTanggalPengiriman))
+                .addGap(172, 172, 172))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(jLabel7)
-                .addGap(58, 58, 58)
-                .addComponent(Jenis_bencana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(cbjenisBantuan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Lokasi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfTanggalPengiriman, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(71, 71, 71)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel3.setBackground(new java.awt.Color(7, 87, 91));
@@ -320,9 +316,10 @@ public class BantuSesama extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -349,90 +346,64 @@ public class BantuSesama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHomeActionPerformed
 
-    private void KeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_KeteranganFocusLost
+    private void tfKeteranganFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusLost
         // TODO add your handling code here:
-        if(Keterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            Keterangan.setText("");
+        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeterangan.setText("");
         }
-    }//GEN-LAST:event_KeteranganFocusLost
+    }//GEN-LAST:event_tfKeteranganFocusLost
 
-    private void KeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_KeteranganFocusGained
+    private void tfKeteranganFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfKeteranganFocusGained
         // TODO add your handling code here:
-        if(Keterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
-            Keterangan.setText("");
+        if(tfKeterangan.getText().equals("TAMBAHKAN KETERANGAN DISINI.....")){
+            tfKeterangan.setText("");
         }
-    }//GEN-LAST:event_KeteranganFocusGained
+    }//GEN-LAST:event_tfKeteranganFocusGained
 
-    private void LokasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LokasiActionPerformed
+    private void tfTanggalPengirimanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LokasiActionPerformed
+    }//GEN-LAST:event_tfTanggalPengirimanActionPerformed
 
-    private void LokasiFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LokasiFocusLost
+    private void tfTanggalPengirimanFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanFocusLost
         // TODO add your handling code here:
-        if(Lokasi.getText().equals("Lokasi")){
-            Lokasi.setText("Lokasi");
+        if(tfTanggalPengiriman.getText().equals("Jam")){
+            tfTanggalPengiriman.setText("");
         }
-    }//GEN-LAST:event_LokasiFocusLost
+    }//GEN-LAST:event_tfTanggalPengirimanFocusLost
 
-    private void LokasiFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_LokasiFocusGained
+    private void tfTanggalPengirimanFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfTanggalPengirimanFocusGained
         // TODO add your handling code here:
-        if(Lokasi.getText().equals("Lokasi")){
-            Lokasi.setText("");
+        if(tfTanggalPengiriman.getText().equals("Jam")){
+            tfTanggalPengiriman.setText("");
         }
-    }//GEN-LAST:event_LokasiFocusGained
+    }//GEN-LAST:event_tfTanggalPengirimanFocusGained
 
-    private void JAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JAMActionPerformed
+    private void cbjenisBantuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbjenisBantuanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JAMActionPerformed
-
-    private void JAMFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JAMFocusLost
-        // TODO add your handling code here:
-        if(JAM.getText().equals("Jam")){
-            JAM.setText("");
-        }
-    }//GEN-LAST:event_JAMFocusLost
-
-    private void JAMFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JAMFocusGained
-        // TODO add your handling code here:
-        if(JAM.getText().equals("Jam")){
-            JAM.setText("");
-        }
-    }//GEN-LAST:event_JAMFocusGained
-
-    private void Jenis_bencanaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jenis_bencanaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Jenis_bencanaActionPerformed
+    }//GEN-LAST:event_cbjenisBantuanActionPerformed
 
     public JTextField getJAM() {
-        return JAM;
+        return tfTanggalPengiriman;
     }
 
     public void setJAM(JTextField JAM) {
-        this.JAM = JAM;
+        this.tfTanggalPengiriman = JAM;
     }
 
     public JComboBox<String> getJenis_bencana() {
-        return Jenis_bencana;
+        return cbjenisBantuan;
     }
 
     public void setJenis_bencana(JComboBox<String> Jenis_bencana) {
-        this.Jenis_bencana = Jenis_bencana;
+        this.cbjenisBantuan = Jenis_bencana;
     }
 
     public JTextArea getKeterangan() {
-        return Keterangan;
+        return tfKeterangan;
     }
 
     public void setKeterangan(JTextArea Keterangan) {
-        this.Keterangan = Keterangan;
-    }
-
-    public JTextField getLokasi() {
-        return Lokasi;
-    }
-
-    public void setLokasi(JTextField Lokasi) {
-        this.Lokasi = Lokasi;
+        this.tfKeterangan = Keterangan;
     }
 
     public JButton getbtnLaporkan() {
@@ -491,14 +462,11 @@ public class BantuSesama extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Bantu;
     private javax.swing.JPanel Home;
-    private javax.swing.JTextField JAM;
-    private javax.swing.JComboBox<String> Jenis_bencana;
-    private javax.swing.JTextArea Keterangan;
-    private javax.swing.JTextField Lokasi;
     private javax.swing.JPanel Masuk1;
     private javax.swing.JLabel Username;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLaporkan;
+    private javax.swing.JComboBox<String> cbjenisBantuan;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
@@ -507,6 +475,10 @@ public class BantuSesama extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextArea tfKeterangan;
+    private javax.swing.JTextField tfTanggalPengiriman;
     // End of variables declaration//GEN-END:variables
 }
