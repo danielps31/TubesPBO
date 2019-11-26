@@ -55,7 +55,6 @@ public class Registrasi extends javax.swing.JFrame {
         tfUsername = new javax.swing.JTextField();
         tfPassword = new javax.swing.JPasswordField();
         btnDaftar = new javax.swing.JButton();
-        tfId_user = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -248,14 +247,12 @@ public class Registrasi extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addComponent(jLabel9)))
                         .addGap(38, 38, 38)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfId_user, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(tfNama)
-                                .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .addComponent(tfNo_telp, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .addComponent(tfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .addComponent(tfPassword)))))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tfNama)
+                            .addComponent(tfEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(tfNo_telp, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(tfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(tfPassword))))
                 .addContainerGap(62, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -290,9 +287,7 @@ public class Registrasi extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addGap(18, 18, 18)
-                .addComponent(tfId_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22)
+                .addGap(62, 62, 62)
                 .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(106, Short.MAX_VALUE))
         );
@@ -360,14 +355,6 @@ public class Registrasi extends javax.swing.JFrame {
     private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfPasswordActionPerformed
-
-    public String getTfId_user() {
-        return tfId_user.getText();
-    }
-
-    public void setTfId_user(String tfId_user) {
-        this.tfId_user.setText(tfId_user);
-    }
 
     
     public JButton getbtnDaftar() {
@@ -478,7 +465,6 @@ public class Registrasi extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField tfEmail;
-    private javax.swing.JTextField tfId_user;
     private javax.swing.JTextField tfNama;
     private javax.swing.JTextField tfNo_telp;
     private javax.swing.JPasswordField tfPassword;

@@ -34,13 +34,21 @@ public class Controller_HomeAfterLogin implements ActionListener{
         home.setUsername(username);
         Object source = e.getSource();
         if (source.equals(home.getbtnLaporkan())){
-            new Controller_Registrasi();
+            btnLaporkanActionPerformed();
             home.setVisible(false);
         } else if (source.equals(home.getbtnBantu())){
-            new Controller_Registrasi();
+            btnBantuActionPerformed();
             home.setVisible(false);
         }
     }
+    
+        private void btnLaporkanActionPerformed() {
+        new Controller_UserLapor(username);
+        home.setVisible(false);
+    }
 
-
+       private void btnBantuActionPerformed(){
+       new Controller_BantuSesama(username);
+       home.setVisible(false);
+       }
 }

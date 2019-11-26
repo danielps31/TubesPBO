@@ -65,13 +65,8 @@ public class Koneksi {
         try {
             String query = "SELECT * FROM user";
             rs = stmt.executeQuery(query);
-<<<<<<< HEAD
             while (rs.next()) {
                 user.add(new User(rs.getString("id_user"), rs.getString("no_telp"), rs.getString("username"), rs.getString("nama"), rs.getString("email"), rs.getString("password")));
-=======
-            while (rs.next()){
-                user.add(new User( rs.getString("username"), rs.getString("no_telp"), rs.getString("nama"), rs.getString("email"), rs.getString("password"),rs.getString("id_user")));
->>>>>>> ba12990c981faa4fd180684229ae779a2661ded7
             }
         } catch (SQLException ex) {
             Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
@@ -115,7 +110,6 @@ public class Koneksi {
         boolean isValid = true;
 
         connect();
-<<<<<<< HEAD
         String query = "INSERT INTO user"
                 + "(`username`, `no_telp`, `nama`, `email`, `password`, `id_user`) "
                 + " VALUES (";
@@ -125,15 +119,6 @@ public class Koneksi {
         query += "'" + m.getEmail() + "',";
         query += "'" + m.getPassword() + "',";
         query += "NULL";
-=======
-        String query = "INSERT INTO User VALUES (";
-        query += "'" + m.getUsername() + "',";
-        query += "'" + m.getNo_telp() + "',";
-        query += "'" + m.getNama() + "'";
-        query += "'" + m.getEmail() + "'";
-        query += "'" + m.getPassword() + "'";
-        query += "'" + m.getId_user() + "',";
->>>>>>> ba12990c981faa4fd180684229ae779a2661ded7
         query += ")";
         if (manipulate(query)) {
             int id = loadUserId(m.getUsername());
