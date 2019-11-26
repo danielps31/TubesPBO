@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author fikri
+ * @author shamgar
  */
 public class Controller_Registrasi implements ActionListener {
     
@@ -62,7 +62,6 @@ public class Controller_Registrasi implements ActionListener {
                      home.setUsername(username);
                      view.setVisible(false);
                      home.setVisible(true);
-                    
                     }
             }
         }

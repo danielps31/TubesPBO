@@ -12,7 +12,8 @@ import java.util.logging.*;
 
 /**
  *
- * @author fikri
+ * @author shamgar
+ * 
  */
 public class Koneksi {
     private Connection conn = null;
