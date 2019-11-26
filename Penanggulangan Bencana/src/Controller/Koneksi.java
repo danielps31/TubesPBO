@@ -12,7 +12,7 @@ import java.util.logging.*;
 
 /**
  *
- * @author fikri
+ * @author Daniel
  */
 public class Koneksi {
 
@@ -20,9 +20,11 @@ public class Koneksi {
     private Statement stmt = null;
     private ResultSet rs = null;
     private ArrayList<User> user = new ArrayList<>();
+    private ArrayList<Admin> admin = new ArrayList<>();
 
     public Koneksi() {
         loadUser();
+        loadAdmin();
     }
 
     public void connect() {
@@ -73,7 +75,19 @@ public class Koneksi {
         }
         disconnect();
     }
-
+    public void loadAdmin() {
+        connect();
+        try {
+            String query = "SELECT * FROM admin";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                admin.add(new Admin(rs.getString("id_admin"), rs.getString("username"), rs.getString("nama"), rs.getString("email"), rs.getString("password")));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Koneksi.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        disconnect();
+    }
     public boolean cekUserLogin(String q, String p) {
         boolean cek = false;
         for (User u : user) {
@@ -149,4 +163,27 @@ public class Koneksi {
         
         return id;
     }
+    
+
+    public boolean cekAdminLogin(String q, String p) {
+        boolean cek = false;
+        for (Admin a : admin) {
+            if (a.getUsername().equals(q) && a.getPassword().equals(p)) {
+                cek = true;
+                break;
+            }
+        }
+        return cek;
+    }
+
+    public String cariId_Admin(String u) {
+        String id = null;
+        for (Admin adm : admin) {
+            if (adm.getUsername().equals(u)) {
+                id = adm.getId_admin();
+            }
+        }
+        return id;
+    }
+
 }

@@ -70,7 +70,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="77" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="btnLoginUser" min="-2" pref="171" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -100,7 +100,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="btnMasuk" alignment="1" pref="55" max="32767" attributes="0"/>
                       <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnLoginUser" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="166" max="32767" attributes="0"/>
               </Group>
@@ -220,7 +220,7 @@
             <Property name="text" type="java.lang.String" value="ATAU"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnLoginUser">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="0"/>

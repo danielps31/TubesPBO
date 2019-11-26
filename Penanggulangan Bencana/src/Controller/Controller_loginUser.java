@@ -62,7 +62,7 @@ public class Controller_loginUser implements ActionListener {
     }   
 
     private void btnLoginAdminActionPerformed() {
-        new Controller_UserLapor(username);
+        new Controller_loginAdmin();
         view.setVisible(false);
 
     }
