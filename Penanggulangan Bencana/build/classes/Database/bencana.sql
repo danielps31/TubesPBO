@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 nov 2019 om 11:13
--- Serverversie: 10.1.38-MariaDB
--- PHP-versie: 7.1.27
+-- Generation Time: Nov 26, 2019 at 02:37 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,11 +25,11 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
-  `id_admin` varchar(10) NOT NULL,
+  `id_admin` int(10) NOT NULL,
   `username` varchar(10) NOT NULL,
   `nama` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
@@ -39,35 +39,34 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `bantuan`
+-- Table structure for table `bantuan`
 --
 
 CREATE TABLE `bantuan` (
-  `jenis_bantuan` varchar(30) NOT NULL,
-  `tanggal_pengiriman` date NOT NULL,
-  `keterangan_bantuan` varchar(100) NOT NULL,
-  `id_bantuan` varchar(10) NOT NULL,
-  `id_peristiwa` varchar(10) NOT NULL
+  `id_bantuan` int(10) NOT NULL,
+  `jenis_bantuan` varchar(100) NOT NULL,
+  `tanggal_pengiriman` time NOT NULL,
+  `keterangan_bantuan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `peristiwa`
+-- Table structure for table `peristiwa`
 --
 
 CREATE TABLE `peristiwa` (
-  `jenis_bencana` varchar(20) NOT NULL,
+  `id_peristiwa` int(11) NOT NULL,
+  `jenis_bencana` varchar(100) NOT NULL,
   `jam` time NOT NULL,
-  `Lokasi` varchar(20) NOT NULL,
-  `keterangan_peristiwa` varchar(1000) NOT NULL,
-  `id_peristiwa` varchar(10) NOT NULL
+  `lokasi_bencana` varchar(100) NOT NULL,
+  `keterangan_bencana` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -76,47 +75,64 @@ CREATE TABLE `user` (
   `nama` varchar(20) NOT NULL,
   `email` varchar(20) NOT NULL,
   `password` varchar(10) NOT NULL,
-  `id_user` varchar(10) NOT NULL
+  `id_user` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexen voor tabel `bantuan`
+-- Indexes for table `bantuan`
 --
 ALTER TABLE `bantuan`
-  ADD PRIMARY KEY (`id_bantuan`),
-  ADD KEY `id_peristiwa` (`id_peristiwa`) USING BTREE;
+  ADD PRIMARY KEY (`id_bantuan`);
 
 --
--- Indexen voor tabel `peristiwa`
+-- Indexes for table `peristiwa`
 --
 ALTER TABLE `peristiwa`
   ADD PRIMARY KEY (`id_peristiwa`);
 
 --
--- Indexen voor tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Beperkingen voor tabel `bantuan`
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `bantuan`
 --
 ALTER TABLE `bantuan`
-  ADD CONSTRAINT `bantuan_ibfk_1` FOREIGN KEY (`id_peristiwa`) REFERENCES `peristiwa` (`id_peristiwa`);
+  MODIFY `id_bantuan` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `peristiwa`
+--
+ALTER TABLE `peristiwa`
+  MODIFY `id_peristiwa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
