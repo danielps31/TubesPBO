@@ -316,25 +316,25 @@ public class BantuSesamaAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
-
-    }//GEN-LAST:event_HomeMouseClicked
-
-    private void btnLaporkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporkanActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnLaporkanActionPerformed
-
-    private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BantuMouseClicked
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     private void Masuk1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Masuk1MouseClicked
 
     }//GEN-LAST:event_Masuk1MouseClicked
 
-    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+    private void BantuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BantuMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnHomeActionPerformed
+    }//GEN-LAST:event_BantuMouseClicked
+
+    private void btnLaporkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLaporkanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLaporkanActionPerformed
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+
+    }//GEN-LAST:event_HomeMouseClicked
     public void setTfJenisBantuan(String tfJenisBantuan) {
         this.tfJenisBantuan.setText(tfJenisBantuan);
     }
@@ -380,15 +380,15 @@ public class BantuSesamaAdmin extends javax.swing.JFrame {
         btnKonfirmasi.addActionListener(x);
     }
     public JTable getTbBantuan1() {
-        return tbBantuan;
+        return tbBantuan1;
     }
     
     public int getSelecctedTbBantuan1(){
-        return tbBantuan.getSelectedRow();
+        return tbBantuan1.getSelectedRow();
     }
     
     public void setTbBantuan1(DefaultTableModel x){
-        tbBantuan.setModel(x);
+        tbBantuan1.setModel(x);
     }
     public void showMessage(String message, String title, int type){
         JOptionPane.showMessageDialog(null, message, title, type);

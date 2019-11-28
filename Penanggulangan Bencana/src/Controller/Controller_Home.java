@@ -23,7 +23,7 @@ public class Controller_Home implements ActionListener{
     public Controller_Home() {
         home = new view_homepage();
         home.addActionListener(this);
-        System.out.println("MASUK CHOME");
+        System.out.println("MASUK LOGIN AWAL");
         home.setVisible(true);
     }
 
