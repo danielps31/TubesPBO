@@ -31,10 +31,10 @@ public class Controller_BantuSesama implements ActionListener{
         kn = new Koneksi();        
         this.username = username;
         bantu.setUsername(username); 
-        loadTableBantuan();
+        loadTablePeristiwa();
     }
-    public void loadTableBantuan(){
-        DefaultTableModel model = new DefaultTableModel(new String[]{"Jenis Bencana", "Jam", "Lokasi", "Keterangan"}, 0);
+    public void loadTablePeristiwa(){
+        DefaultTableModel model = new DefaultTableModel(new String[]{"Jenis Bencana", "Jam", "Lokasi", "Keterangan","Status"}, 0);
         ArrayList<Peristiwa> peristiwa = kn.getPeristiwa();
         for (Peristiwa p : peristiwa) {
             model.addRow(new Object[]{p.getJenis_bencana(), p.getJam(), p.getLokasi(), p.getKeterangan_peristiwa()});

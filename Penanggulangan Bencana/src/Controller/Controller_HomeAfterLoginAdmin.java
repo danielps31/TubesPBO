@@ -43,12 +43,12 @@ public class Controller_HomeAfterLoginAdmin implements ActionListener{
     }
     
         private void btnLaporkanActionPerformed() {
-        new Controller_AdminLapor();
+        new Controller_AdminLapor(username);
         home.setVisible(false);
     }
 
        private void btnBantuActionPerformed(){
-       new Controller_BantuSesama(username);
+       new Controller_BantuSesamaAdmin(username);
        home.setVisible(false);
        }
 }

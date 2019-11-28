@@ -22,7 +22,7 @@ public class Controller_AdminLapor implements ActionListener {
     private String username;
     private Koneksi kn;
     
-    public Controller_AdminLapor(){
+    public Controller_AdminLapor(String username){
         admlapor = new AdminLapor();
         admlapor.addActionListener(this);
         admlapor.setVisible(true);
@@ -48,11 +48,23 @@ public class Controller_AdminLapor implements ActionListener {
         Object source = e.getSource();
         if (source.equals(admlapor.getbtnEditStatus())){
             btnEditStatusActionPerformed();
+        } else if (source.equals(admlapor.getbtnHome())){
+            btnHomeActionPerformed();
+        } else if(source.equals(admlapor.getbtnBantu())){
+            btnBantuActionPerformed();
         }
     }
     
     public void btnEditStatusActionPerformed(){
-        new Controller_HomeAfterLogin(username);
+        new Controller_HomeAfterLoginAdmin(username);
+        admlapor.setVisible(false);
+    }
+    public void btnHomeActionPerformed(){
+        new Controller_HomeAfterLoginAdmin(username);
+        admlapor.setVisible(false);
+    }
+    public void btnBantuActionPerformed(){
+        new Controller_BantuSesamaAdmin(username);
         admlapor.setVisible(false);
     }
     

@@ -309,6 +309,15 @@ public class AdminLapor extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    public JButton getbtnHome() {
+        return btnHome;
+    }
+
+    public JButton getbtnBantu() {
+        return btnBantu;
+    }
+
     public void setUsername(String Username) {
         this.Username.setText(Username);
     }
@@ -317,6 +326,8 @@ public class AdminLapor extends javax.swing.JFrame {
     }    
     public void addActionListener(ActionListener x){
         btnEditStatus.addActionListener(x);
+        btnHome.addActionListener(x);
+        btnBantu.addActionListener(x);
     }
     public void showMessage(String message, String title, int type){
         JOptionPane.showMessageDialog(null, message, title, type);
